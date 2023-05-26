@@ -9,6 +9,7 @@ detector = MTCNN()
 
 face_recognition_model = dlib.face_recognition_model_v1("dlib_face_recognition_resnet_model_v1.dat")
 
+
 def load_users():
     users = {}
     for user_name in os.listdir("faces"):
@@ -114,7 +115,8 @@ def main():
     while True:
         choice = input("¿Quieres registrarte (R) o iniciar sesión (L)? (Q para salir): ").lower()
         if choice == 'r':
-            register_user()
+            user_name = input("Ingresa tu nombre de usuario: ")
+            register_user(user_name)
         elif choice == 'q':
             break
         else:
